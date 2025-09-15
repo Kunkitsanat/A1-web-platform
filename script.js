@@ -13,11 +13,16 @@ function draw() {
     draw_player(mouseX);
     ellipse(x,y,20,20);
     y += count;
+    if(anime){
+        fill(0);
+    }
+    else{
+        fill(255);
+    }
 
     if (y > height) {          
         start_ball(); 
     } 
-
 
 }
 
