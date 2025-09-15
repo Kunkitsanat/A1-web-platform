@@ -23,6 +23,7 @@ function draw() {
     
     if (y + 10 >= 450 - 30 && y < 450 && abs(x - mouseX) < 20) { 
         if (anime) { 
+            end_game();
             noLoop();
         } 
         else {  
@@ -55,4 +56,20 @@ function start_ball() {
     count = int(random(5, 12)); 
     ball_type = int(random(1, 6));
     anime = (ball_type == 1);
+}
+
+function end_game(){
+    background(255,105,97); 
+    line(100,100,100,200);
+    line(100,100,150,100);  
+    line(100,150,150,150); 
+    line(100,200,150,200);  
+    
+    line(200,100,200,200); 
+    line(200,100,250,200); 
+    line(250,100,250,200); 
+    
+    line(300,100,300,200); 
+    line(300,100,350,150); 
+    line(300,200,350,150); 
 }
