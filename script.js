@@ -21,12 +21,26 @@ function draw() {
         fill(255);
     }
     
-    if (y > height) {          
-        start_ball(); 
+    if (y + 10 >= 450 - 30 && y < 450 && abs(x - mouseX) < 20) { 
+        if (anime) { 
+            noLoop();
+        } 
+        else {  
+            start_ball();
+        } 
     } 
 
+    if (y > height) { 
+        if (anime){ 
+            start_ball(); 
+        } 
+        else {  
+            end_game(); 
+            noLoop(); 
+        } 
+    } 
+} 
 
-}
 
 function draw_player(playerx) { 
     line(playerx - 20, 450, playerx + 20, 450);
