@@ -14,12 +14,19 @@ function draw() {
     ellipse(x,y,20,20);
     y += count;
 
+    if(anime){
+        fill(0);
+    }
+    else{
+        fill(255);
+    }
+    
     if (y > height) {          
         start_ball(); 
     } 
 
 
-}
+} 
 
 function draw_player(playerx) { 
     line(playerx - 20, 450, playerx + 20, 450);
