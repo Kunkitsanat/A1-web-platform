@@ -13,6 +13,12 @@ function draw() {
     draw_player(mouseX);
     ellipse(x,y,20,20);
     y += count;
+    if(anime){
+        fill(0);
+    }
+    else{
+        fill(255);
+    }
 
     if(anime){
         fill(0);
@@ -26,7 +32,7 @@ function draw() {
     } 
 
 
-} 
+}
 
 function draw_player(playerx) { 
     line(playerx - 20, 450, playerx + 20, 450);
