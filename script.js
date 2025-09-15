@@ -13,6 +13,12 @@ function draw() {
     draw_player(mouseX);
     ellipse(x,y,20,20);
     y += count;
+
+    if (y > height) {          
+        start_ball(); 
+    } 
+
+
 }
 
 function draw_player(playerx) { 
