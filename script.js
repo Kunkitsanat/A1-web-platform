@@ -4,7 +4,7 @@ let count;
 let anime;
 
 function setup() {
-    createCanvas(500, 500);
+    createCanvas(windowWidth, windowHeight);
     start_ball();
 }
 
@@ -21,7 +21,7 @@ function draw() {
         fill(255);
     }
     
-    if (y + 10 >= 450 - 30 && y < 450 && abs(x - mouseX) < 20) { 
+    if (y + 10 >= 570 && y < 600 && abs(x - mouseX) < 20) { 
         if (anime) { 
             end_game();
             noLoop();
@@ -44,14 +44,14 @@ function draw() {
 
 
 function draw_player(playerx) { 
-    line(playerx - 20, 450, playerx + 20, 450);
-    line(playerx - 20, 450 - 30, playerx - 20, 450); 
-    line(playerx + 20, 450 - 30, playerx + 20, 450); 
-    
+    line(playerx - 20, 600 - 30, playerx + 20, 600 - 30);
+    line(playerx - 20, 600, playerx + 20, 600);
+    line(playerx - 20, 600 - 30, playerx - 20, 600);
+    line(playerx + 20, 600 - 30, playerx + 20, 600);
 } 
 
 function start_ball() { 
-    x = int(random(50, 450));  
+    x = int(random(50, windowWidth-100));  
     y = 0; 
     count = int(random(5, 12)); 
     ball_type = int(random(1, 6));
@@ -72,4 +72,8 @@ function end_game(){
     line(300,100,300,200); 
     line(300,100,350,150); 
     line(300,200,350,150); 
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
